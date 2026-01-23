@@ -1,25 +1,23 @@
-[
-    {
-        "contact": {
-            "firstName": "Ethan",
-            "lastName": "Davie",
-            "email": "edavie@hotmail.com",
-            "favoriteColor": "Purple",
-            "birthday": "03/14/2003"
-        },
-        "contact2": {
-            "firstName": "Claire",
-            "lastName": "Davie",
-            "email": "cdavie@hotmail.com",
-            "favoriteColor": "Pink",
-            "birthday": "12/25/2004"
-        },
-        "contact3": {
-            "firstName": "Jennifer",
-            "lastName": "Davie",
-            "email": "jdavie@hotmail.com",
-            "favoriteColor": "Blue",
-            "birthday": "06/18/1980"
-        }
-    }
-]
+{
+  "contact": {
+    "firstName": "Jennifer",
+    "lastName": "Davie",
+    "email": "jdavie@email.com",
+    "favoriteColor": "Blue",
+    "birthday": "06/18/80"
+  },
+  "contact2": {
+    "firstName": "Ethan",
+    "lastName": "Davie",
+    "email": "edavie@email.com",
+    "favoriteColor": "Purple",
+    "birthday": "03/14/03"
+  },
+  "contact3": {
+    "firstName": "Claire",
+    "lastName": "Davie",
+    "email": "cdavie@email.com",
+    "favoriteColor": "Pink",
+    "birthday": "12/25/04"
+  }
+}
