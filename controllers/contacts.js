@@ -30,21 +30,20 @@ const createContact = async (req, res) => {
     favoriteColor: req.body.favoriteColor,
     birthday: req.body.birthday
   };
-
   const response = await mongodb
   .getDb()
   .db()
   .collection('contacts')
   .insertOne(contact);
-
-  if (response.acknowledged) {
-    res.status(201).json(response);
+  if (response.insertedCount === 1) {
+    res.status(201).json(response.ops[0]);
   } else {
-    res.status(500).json({ error: 'An error occured while creating the contact'});
+    res.status(500).json(response.error || 'An error occured while creating the contact');
   }
 };
 
-const updateContact = async (req, res, next) => {
+const updateContact = async (req, res) => {
+  const userId = new ObjectId(req.params.id);
   const contact = {
     firstName: req.body.firstName,
     lastName: req.body.lastName,
@@ -58,7 +57,6 @@ const updateContact = async (req, res, next) => {
   .db()
   .collection('contacts')
   .replaceOne({ _id: userId }, contact);
-
   if (response.modifiedCount > 0) {
     res.status(204).send();
   } else {
@@ -66,16 +64,15 @@ const updateContact = async (req, res, next) => {
   }
 };
 
-const deleteContact = async (req, res, next) => {
+const deleteContact = async (req, res) => {
   const userId = new ObjectId(req.params.id);
   const response = await mongodb
     .getDb()
     .db()
     .collection('contacts')
-    .deleteOne({ _id: userId }, contact);
-
+    .deleteOne({ _id: userId });
   if (response.deletedCount > 0) {
-    res.status(200).json({ message: 'Contact deleted successfully.' });
+    res.status(204).send();
   } else {
     res.status(500).json({ error: 'An error occured while deleting the contact'});
   }
