@@ -1,11 +1,36 @@
-###
+### Get all contacts
 GET http://localhost:8080/contacts
 
-###
+### Get contact by ID
 GET http://localhost:8080/contacts/6972e683a7407a17b8a40782
 
-###
+### Get contact by ID
 GET http://localhost:8080/contacts/6972e828a7407a17b8a40785
 
-###
+### Get contact by ID
 GET http://localhost:8080/contacts/6972e83ca7407a17b8a40787
+
+### Create Contact
+POST http://localhost:8080/contacts
+Content-Type: application/json
+
+{
+    "firstName": "Grace",
+    "lastName": "Davie",
+    "email": "gdavie@email.com",
+    "favoriteColor": "Blue",
+    "birthday": "09/13/99"
+}
+
+### Edit Contact
+PUT http://localhost:8080/contacts/6972e683a7407a17b8a40782
+Content-Type: application/json
+
+"firstName": "",
+    "lastName": "",
+    "email": "",
+    "favoriteColor": "",
+    "birthday": ""
+
+### Delete Contact
+DELETE http://localhost:8080/contacts/6972e683a7407a17b8a40782
