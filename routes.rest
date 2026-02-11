@@ -1,16 +1,10 @@
-### Get all contacts
+### Get all contacts - localhost
 GET http://localhost:8080/contacts
 
-### Get contact by ID
+### Get contact by ID - localhost
 GET http://localhost:8080/contacts/6972e683a7407a17b8a40782
 
-### Get contact by ID
-GET http://localhost:8080/contacts/6972e828a7407a17b8a40785
-
-### Get contact by ID
-GET http://localhost:8080/contacts/6972e83ca7407a17b8a40787
-
-### Create Contact
+### Create Contact - localhost
 POST http://localhost:8080/contacts
 Content-Type: application/json
 
@@ -34,5 +28,38 @@ Content-Type: application/json
     "birthday": "06/18/80"
 }
 
-### Delete Contact
-DELETE http://localhost:8080/contacts/69840dfe8f7f6e2aac6d0208
+### Delete Contact - localhost
+DELETE http://localhost:8080/contacts/698a7f04c95fb800316ede6a
+
+### Get all contacts - render
+GET https://cse341-17dp.onrender.com/contacts
+
+### Get contact by ID - render
+GET https://cse341-17dp.onrender.com/6972e683a7407a17b8a40782
+
+### Create Contact - render
+POST https://cse341-17dp.onrender.com/contacts
+Content-Type: application/json
+
+{
+    "firstName": "John",
+    "lastName": "Denver",
+    "email": "jdenver@email.com",
+    "favoriteColor": "Red",
+    "birthday": "10/17/54"
+}
+
+### Edit Contact - render
+PUT https://cse341-17dp.onrender.com/contacts/6972e683a7407a17b8a40782
+Content-Type: application/json
+
+{
+    "firstName": "Jennifer",
+    "lastName": "Davie",
+    "email": "jdavie@email.com",
+    "favoriteColor": "Green",
+    "birthday": "06/18/80"
+}
+
+### Delete Contact - render
+DELETE https://cse341-17dp.onrender.com/contacts/698a7f04c95fb800316ede6a
